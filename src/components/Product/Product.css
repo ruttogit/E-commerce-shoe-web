@@ -17,7 +17,7 @@
 
 .card{
     min-width: 350px;
-    max-width: 387px;
+    max-width: 300px;
     background: #ffffff;
     padding: 2rem 3rem;
     position: relative;
@@ -25,6 +25,10 @@
     flex-direction: column;
     /* align-items: center; */
     gap: 0.5rem;
+}
+
+.product-img-cont{
+    height: 200px;
 }
 
 .heart-img{
@@ -68,6 +72,8 @@
 @media screen and (max-width: 750px){
     .card{
         min-width: 300px;
+        max-width: 300px;
+        height: 400px;
     }
 
     .product{
@@ -76,7 +82,7 @@
 
     
     .product-img{
-        width: 180px;
+        width: 120px;
     }
 
     .ratings img{
@@ -85,7 +91,7 @@
 
     
     .card p{
-        font-size: 20px;
+        font-size: 17px;
         text-align: left;
     }
     .products-container{
@@ -95,7 +101,7 @@
 
     .add-to-cart-btn{
         padding: 0.5rem 2rem;
-        font-size: 18px;
+        font-size: 17px;
     }
 
 }
