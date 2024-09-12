@@ -1,0 +1,40 @@
+.subs-cont{
+    padding: 0 5%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    margin-top: 4rem;
+    flex-direction: row;
+}
+
+.subs-cont p{
+    width: 70%;
+}
+
+
+@media screen and (max-width: 750px) {
+    .subs-cont{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        justify-content: center;
+        height: 15rem;
+    }
+
+    .subs-cont p{
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .subs-cont h2, p{
+        text-align: center;
+        
+    }
+
+    .subs-btn{
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+    }
+}
