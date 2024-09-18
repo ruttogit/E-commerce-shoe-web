@@ -1,19 +1,19 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-// import { Link } from "react-router-dom";
-
 import Footer from "./components/Footer/Footer";
-// import Hero from "./components/hero/Hero";
 import Cart from "./components/Cart/Cart"
 import Nav from "./components/NavBar/Nav";
 import Home from "./Home";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-
+const cartFromLocalStorage= JSON.parse(localStorage.getItem("cart") || "[]")
 
 
 function App() {
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState(cartFromLocalStorage)
 
+  useEffect(() =>{
+    localStorage.setItem("cart", JSON.stringify(cart))
+  },[cart])
   const handleAddToCart = (item) => {
     let notInCart = true;
     cart.forEach((product) =>{
@@ -21,20 +21,17 @@ function App() {
         notInCart = false
       }
     })
+    // handle item that is already in cart
     if (notInCart){
       setCart([...cart, item]);
-      // console.log(cart);
     }else if (!notInCart){
       window.alert('alreay in cart');
     }
   };
-
+  // handle quantity of item
   const handleChange = (item, d) => {
     console.log(item);
   }
-
-
-
   return (
     <>
     <BrowserRouter>
@@ -47,7 +44,6 @@ function App() {
       </Routes>
       <Footer/>
     </BrowserRouter>
-      
     </>
   );
 }

@@ -26,7 +26,6 @@ function Nav({cartQuantity}) {
                 <Link to='/cart'>
                     <img src={cart} alt="cart-icon" />  
                 </Link>
-                
             </div>
              }
             <img src={user} alt="user-icon" />

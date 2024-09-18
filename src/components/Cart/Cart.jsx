@@ -64,7 +64,7 @@ function Cart({ cartQuantity, cart, setCart, handleChange }) {
                                         </div>
                                         <div className="bottom">
                                             <div className="bottom-left">
-                                                <h4>@${item.price.toFixed(2)}</h4>
+                                                <h4>@${item.price}</h4>
                                             </div>
                                             <div className="bottom-right">
                                                 <button className="btn delete-btn" onClick={() => handleRemove(item.id)}>Delete</button>
