@@ -17,8 +17,8 @@ function Card({item, handleAddToCart}) {
                     <img src={item.image} alt="" className='product-img'/>
                 </div>
                 <div className="ratings">
-                    {item.ratings.map((star) =>{
-                        return <img src={star} alt="" className='star' />
+                    {item.ratings.map((star, index) =>{
+                        return <img src={star} alt="" className='star' key={index}/>
                     })}
 
                 </div>

@@ -11,8 +11,9 @@ const cartFromLocalStorage= JSON.parse(localStorage.getItem("cart") || "[]")
 function App() {
   const [cart, setCart] = useState(cartFromLocalStorage)
 
+
   useEffect(() =>{
-    localStorage.setItem("cart", JSON.stringify(cart))
+    localStorage.setItem("cart", JSON.stringify(cart));
   },[cart])
   const handleAddToCart = (item) => {
     let notInCart = true;
@@ -29,17 +30,16 @@ function App() {
     }
   };
   // handle quantity of item
-  const handleChange = (item, d) => {
-    console.log(item);
-  }
+  const [query, setQuery] = useState("");
   return (
     <>
     <BrowserRouter>
-      <Nav cartQuantity={cart.length}/>
+      <Nav cartQuantity={cart.length} setQuery={setQuery}/>
       <Routes >
-        <Route  path='/' element={<Home handleAddToCart={handleAddToCart}/>}>
+        <Route  path='/' element={<Home handleAddToCart={handleAddToCart} query={query} setQuery={setQuery}/>}>
         </Route>
-        <Route path='/cart' element={<Cart cartQuantity={cart.length} cart={cart} setCart={setCart} handleChange={handleChange}/>}>
+        <Route path='/cart' element={<Cart cartQuantity={cart.length} cart={cart} setCart={setCart} />}> 
+        {/* handleChange={handleChange} */}
         </Route>
       </Routes>
       <Footer/>

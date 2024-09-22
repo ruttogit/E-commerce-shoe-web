@@ -1,4 +1,3 @@
-import React from 'react'
 import search from "../../icons/search.svg"
 import cart from "../../icons/shopping-bag.svg"
 import user from "../../icons/user.svg"
@@ -6,7 +5,8 @@ import "./Nav.css"
 import { Link, useLocation } from 'react-router-dom'
 
 
-function Nav({cartQuantity}) {
+
+function Nav({cartQuantity, setQuery}) {
     const location = useLocation();
   return (
     <div className='Nav-bar'>
@@ -16,7 +16,7 @@ function Nav({cartQuantity}) {
             </Link>
         </div>
         <div className="center-nav">
-            <input type="search" className='sarch-input'/>
+            <input type="search" className='sarch-input' onChange={e=> setQuery(e.target.value)}/>
             <img src={search} alt="" className='search-icon'/>
         </div>
         <div className="right-nav">
